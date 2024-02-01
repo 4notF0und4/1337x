@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Editor with Table</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Blog Editor with Table</h2>
+
+    <button onclick="openModal()">Open Editor</button>
+
+    <div id="modal" class="modal" onmousedown="preventClose(event)">
+      <div class="modal-content">
+        <button class="close-button" onclick="closeModal()">Close</button>
+        <h3>Blog Editor</h3>
+        <label for="blogTitle">1. Blog Title:</label>
+        <input type="text" id="blogTitle" />
+
+        <label for="titleColor">2. Title Color:</label>
+        <input type="color" id="titleColor" />
+
+        <label for="titleFontSize">3. Title Font Size:</label>
+        <input type="number" id="titleFontSize" min="1" step="1" />
+
+        <label for="titleMarginBottom">4. Title Margin Bottom:</label>
+        <input type="number" id="titleMarginBottom" min="0" step="1" />
+
+        <label for="blogContent">5. Blog Content:</label>
+        <textarea id="blogContent" rows="4"></textarea>
+
+        <label for="contentColor">6. Content Color:</label>
+        <input type="color" id="contentColor" />
+
+        <label for="contentFontSize">7. Content Font Size:</label>
+        <input type="number" id="contentFontSize" min="1" step="1" />
+
+        <button onclick="saveChanges()">Save Changes</button>
+      </div>
+    </div>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Blog Title</th>
+          <th>Title Color</th>
+          <th>Title Font Size</th>
+          <th>Title Margin Bottom</th>
+          <th>Blog Content</th>
+          <th>Content Color</th>
+          <th>Content Font Size</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be dynamically added here -->
+      </tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
